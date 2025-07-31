@@ -240,6 +240,20 @@
       transform: translateY(0);
     }
 
+    /* Ensure CSS hover works even when JavaScript sets styles */
+    .dropdown:hover .dropdown-menu {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateY(0) !important;
+    }
+
+    /* Class-based dropdown control for JavaScript */
+    .dropdown-menu.js-hidden {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+    }
+
     .dropdown-item {
       margin-bottom: 4px;
     }
@@ -611,7 +625,7 @@
       align-items: center;
       gap: 12px;
       padding: 18px 50px;
-      background: var(--gradient2);
+      background: var(--gradient4);
       color: var(--txt);
       border: none;
       border-radius: var(--radius-lg);
@@ -630,19 +644,19 @@
 
     @keyframes ctaPulse {
       0% { 
-        box-shadow: 0 12px 50px rgba(185, 108, 255, 0.3);
+        box-shadow: 0 12px 50px rgba(250, 112, 154, 0.3);
         transform: scale(1);
       }
       100% { 
-        box-shadow: 0 20px 60px rgba(185, 108, 255, 0.5);
+        box-shadow: 0 20px 60px rgba(250, 112, 154, 0.5);
         transform: scale(1.05);
       }
     }
 
     .hero .cta-btn:hover {
-      background: var(--gradient3);
+      background: var(--gradient5);
       transform: translateY(-4px) scale(1.08);
-      box-shadow: 0 25px 70px rgba(185, 108, 255, 0.6);
+      box-shadow: 0 25px 70px rgba(118, 75, 162, 0.6);
     }
 
     .hero .cta-btn i {
@@ -888,6 +902,55 @@
       box-shadow: 0 15px 40px rgba(185, 108, 255, 0.4);
     }
 
+    /* Unique button gradients for each plan type */
+    .plan-card.free .plan-button {
+      background: var(--gradient1);
+    }
+
+    .plan-card.free .plan-button:hover {
+      background: var(--gradient2);
+    }
+
+    .plan-card.pro .plan-button {
+      background: var(--gradient3);
+    }
+
+    .plan-card.pro .plan-button:hover {
+      background: var(--gradient4);
+    }
+
+    .plan-card.biz .plan-button {
+      background: var(--gradient5);
+    }
+
+    .plan-card.biz .plan-button:hover {
+      background: var(--gradient6);
+    }
+
+    .plan-card.reseller .plan-button {
+      background: var(--gradient7);
+    }
+
+    .plan-card.reseller .plan-button:hover {
+      background: var(--gradient8);
+    }
+
+    .plan-card.master .plan-button {
+      background: var(--gradient9);
+    }
+
+    .plan-card.master .plan-button:hover {
+      background: var(--gradient10);
+    }
+
+    .plan-card.alpha .plan-button {
+      background: var(--gradient10);
+    }
+
+    .plan-card.alpha .plan-button:hover {
+      background: var(--gradient1);
+    }
+
     /* DOMAIN SECTION */
     .domain-section {
       padding: 100px 0;
@@ -934,7 +997,7 @@
 
     .search-btn {
       padding: 16px 30px;
-      background: var(--gradient2);
+      background: var(--gradient6);
       color: var(--txt);
       border: none;
       border-radius: var(--radius);
@@ -948,7 +1011,7 @@
     }
 
     .search-btn:hover {
-      background: var(--gradient3);
+      background: var(--gradient7);
       transform: scale(1.05);
     }
 
@@ -1070,7 +1133,7 @@
     .domain-btn {
       width: 100%;
       padding: 12px 20px;
-      background: var(--gradient2);
+      background: var(--gradient8);
       color: var(--txt);
       border: none;
       border-radius: var(--radius);
@@ -1081,7 +1144,7 @@
     }
 
     .domain-btn:hover {
-      background: var(--gradient3);
+      background: var(--gradient9);
       transform: translateY(-2px);
     }
 
@@ -1231,6 +1294,103 @@
       background: var(--gradient3);
       transform: translateY(-2px);
       box-shadow: 0 10px 30px rgba(185, 108, 255, 0.3);
+    }
+
+    /* Unique service card styling */
+    .service-card.ssl-service .service-icon {
+      background: var(--gradient1);
+    }
+
+    .service-card.ssl-service:hover .service-icon {
+      background: var(--gradient2);
+    }
+
+    .service-card.ssl-service .service-btn {
+      background: var(--gradient1);
+    }
+
+    .service-card.ssl-service .service-btn:hover {
+      background: var(--gradient2);
+    }
+
+    .service-card.email-service .service-icon {
+      background: var(--gradient3);
+    }
+
+    .service-card.email-service:hover .service-icon {
+      background: var(--gradient4);
+    }
+
+    .service-card.email-service .service-btn {
+      background: var(--gradient3);
+    }
+
+    .service-card.email-service .service-btn:hover {
+      background: var(--gradient4);
+    }
+
+    .service-card.vps-service .service-icon {
+      background: var(--gradient5);
+    }
+
+    .service-card.vps-service:hover .service-icon {
+      background: var(--gradient6);
+    }
+
+    .service-card.vps-service .service-btn {
+      background: var(--gradient5);
+    }
+
+    .service-card.vps-service .service-btn:hover {
+      background: var(--gradient6);
+    }
+
+    .service-card.backup-service .service-icon {
+      background: var(--gradient7);
+    }
+
+    .service-card.backup-service:hover .service-icon {
+      background: var(--gradient8);
+    }
+
+    .service-card.backup-service .service-btn {
+      background: var(--gradient7);
+    }
+
+    .service-card.backup-service .service-btn:hover {
+      background: var(--gradient8);
+    }
+
+    .service-card.cdn-service .service-icon {
+      background: var(--gradient9);
+    }
+
+    .service-card.cdn-service:hover .service-icon {
+      background: var(--gradient10);
+    }
+
+    .service-card.cdn-service .service-btn {
+      background: var(--gradient9);
+    }
+
+    .service-card.cdn-service .service-btn:hover {
+      background: var(--gradient10);
+    }
+
+    .service-card.development-service .service-icon {
+      background: var(--gradient10);
+    }
+
+    .service-card.development-service:hover .service-icon {
+      background: var(--gradient1);
+    }
+
+    .service-card.development-service .service-btn {
+      background: var(--gradient10);
+    }
+
+    .service-card.development-service .service-btn:hover {
+      background: var(--gradient1);
     }
 
     /* FEATURES SECTION */
@@ -1781,7 +1941,7 @@
       right: 30px;
       width: 50px;
       height: 50px;
-      background: var(--gradient2);
+      background: var(--gradient10);
       border: none;
       border-radius: 50%;
       color: var(--txt);
@@ -1800,12 +1960,20 @@
     }
 
     .scroll-to-top:hover {
-      background: var(--gradient3);
+      background: var(--gradient1);
       transform: translateY(-3px);
     }
 
     /* RESPONSIVE DESIGN */
     @media (max-width: 1024px) {
+      .scroll-to-top {
+        bottom: 25px;
+        right: 25px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+      }
+
       .navbar-container {
         padding: 16px 20px;
       }
@@ -1844,6 +2012,14 @@
     }
 
     @media (max-width: 768px) {
+      .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+      }
+
       .navbar-menu,
       .navbar-cta {
         display: none;
@@ -1914,6 +2090,14 @@
     }
 
     @media (max-width: 480px) {
+      .scroll-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 38px;
+        height: 38px;
+        font-size: 0.9rem;
+      }
+
       .navbar-container {
         padding: 12px 16px;
       }
@@ -2383,7 +2567,7 @@
         </div>
 
         <div class="services-grid">
-          <div class="service-card">
+          <div class="service-card ssl-service">
             <div class="service-icon">
               <i class="fas fa-shield-alt"></i>
             </div>
@@ -2401,7 +2585,7 @@
             </div>
           </div>
 
-          <div class="service-card">
+          <div class="service-card email-service">
             <div class="service-icon">
               <i class="fas fa-envelope"></i>
             </div>
@@ -2419,7 +2603,7 @@
             </div>
           </div>
 
-          <div class="service-card">
+          <div class="service-card vps-service">
             <div class="service-icon">
               <i class="fas fa-cloud"></i>
             </div>
@@ -2437,7 +2621,7 @@
             </div>
           </div>
 
-          <div class="service-card">
+          <div class="service-card backup-service">
             <div class="service-icon">
               <i class="fas fa-backup"></i>
             </div>
@@ -2455,7 +2639,7 @@
             </div>
           </div>
 
-          <div class="service-card">
+          <div class="service-card cdn-service">
             <div class="service-icon">
               <i class="fas fa-tachometer-alt"></i>
             </div>
@@ -2473,7 +2657,7 @@
             </div>
           </div>
 
-          <div class="service-card">
+          <div class="service-card development-service">
             <div class="service-icon">
               <i class="fas fa-code"></i>
             </div>
@@ -2881,9 +3065,12 @@
         if (!dropdown.contains(event.target)) {
           const menu = dropdown.querySelector('.dropdown-menu');
           if (menu) {
-            menu.style.opacity = '0';
-            menu.style.visibility = 'hidden';
-            menu.style.transform = 'translateY(-10px)';
+            // Use CSS class instead of inline styles to preserve hover functionality
+            menu.classList.add('js-hidden');
+            // Remove the class after transition to restore CSS hover control
+            setTimeout(() => {
+              menu.classList.remove('js-hidden');
+            }, 300);
           }
         }
       });
