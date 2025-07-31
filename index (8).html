@@ -1911,6 +1911,15 @@
         flex-direction: column;
         text-align: center;
       }
+
+      /* Responsive scroll-to-top button */
+      .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+      }
     }
 
     @media (max-width: 480px) {
@@ -1936,6 +1945,15 @@
 
       .stat-number {
         font-size: 2rem;
+      }
+
+      /* Mobile responsive scroll-to-top button */
+      .scroll-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
       }
     }
 
@@ -2874,19 +2892,33 @@
       });
     });
 
-    // Close dropdowns when clicking outside
+    // Close dropdowns when clicking outside - but preserve hover functionality
     document.addEventListener('click', function(event) {
       const dropdowns = document.querySelectorAll('.dropdown');
       dropdowns.forEach(dropdown => {
         if (!dropdown.contains(event.target)) {
           const menu = dropdown.querySelector('.dropdown-menu');
           if (menu) {
-            menu.style.opacity = '0';
-            menu.style.visibility = 'hidden';
-            menu.style.transform = 'translateY(-10px)';
+            // Reset to CSS-controlled state instead of forcing hidden
+            menu.style.opacity = '';
+            menu.style.visibility = '';
+            menu.style.transform = '';
           }
         }
       });
+    });
+
+    // Ensure hover functionality is preserved on dropdown links
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+      const menu = dropdown.querySelector('.dropdown-menu');
+      if (menu) {
+        // Reset any inline styles that might interfere with CSS hover
+        dropdown.addEventListener('mouseenter', function() {
+          menu.style.opacity = '';
+          menu.style.visibility = '';
+          menu.style.transform = '';
+        });
+      }
     });
 
     // Enhanced mobile dropdown functionality
