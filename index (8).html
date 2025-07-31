@@ -1,0 +1,3296 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>INTERCLOUDNET.ASIA | Hosting tối ưu tốc độ</title>
+  <meta name="description" content="Hosting chuẩn tối ưu, tốc độ, bảo mật, hỗ trợ 24/7 tại INTERCLOUDNET.ASIA.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #00e6b8;
+      --secondary: #3d61ff;
+      --accent: #b86cff;
+      --bg: #0f1419;
+      --bg-secondary: #1a1f2e;
+      --card: #1e2532;
+      --card-hover: #252b3a;
+      --border: #2a3441;
+      --txt: #e9eeef;
+      --txt-soft: #b7c1c7;
+      --txt-muted: #8892a0;
+      --radius: 20px;
+      --radius-sm: 12px;
+      --radius-lg: 28px;
+      --shadow: 0 8px 40px rgba(0,0,0,0.15);
+      --shadow-lg: 0 12px 50px rgba(0,0,0,0.25);
+
+      /* Enhanced gradients */
+      --gradient1: linear-gradient(135deg, #00e6b8 0%, #3d61ff 50%, #b86cff 100%);
+      --gradient2: linear-gradient(135deg, #ff6b9d 0%, #c44569 50%, #f8b500 100%);
+      --gradient3: linear-gradient(135deg, #4facfe 0%, #00f2fe 50%, #43e97b 100%);
+      --gradient4: linear-gradient(135deg, #fa709a 0%, #fee140 50%, #96fbc4 100%);
+      --gradient5: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+      --gradient6: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ff8a80 100%);
+      --gradient7: linear-gradient(135deg, #a8edea 0%, #fed6e3 50%, #d299c2 100%);
+      --gradient8: linear-gradient(135deg, #fbd3e9 0%, #bb377d 50%, #4776e6 100%);
+      --gradient9: linear-gradient(135deg, #8ec5fc 0%, #e0c3fc 50%, #ffeaa7 100%);
+      --gradient10: linear-gradient(135deg, #96fbc4 0%, #f9f586 50%, #ff8a80 100%);
+
+      /* Navbar specific colors */
+      --navbar-bg: rgba(30, 37, 50, 0.95);
+      --navbar-blur: blur(15px);
+      --navbar-border: rgba(0, 230, 184, 0.2);
+      --navbar-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body { 
+      height: 100%; 
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: var(--bg);
+      color: var(--txt);
+      min-height: 100vh;
+      font-size: 16px;
+      line-height: 1.6;
+      letter-spacing: 0.01em;
+      overflow-x: hidden;
+    }
+
+    .container { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 0 24px;
+    }
+
+    /* NAVBAR STYLES */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--navbar-bg);
+      backdrop-filter: var(--navbar-blur);
+      -webkit-backdrop-filter: var(--navbar-blur);
+      border-bottom: 1px solid var(--navbar-border);
+      box-shadow: var(--navbar-shadow);
+      z-index: 1000;
+      transition: all 0.3s ease;
+      padding: 0;
+    }
+
+    .navbar.scrolled {
+      background: rgba(15, 20, 25, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .navbar-logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      z-index: 1001;
+    }
+
+    .navbar-logo i {
+      margin-right: 12px;
+      background: var(--gradient3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 1.8rem;
+      animation: logoFloat 3s infinite alternate;
+    }
+
+    @keyframes logoFloat {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(-3px) rotate(5deg); }
+    }
+
+    .navbar-logo .logo-text {
+      background: var(--gradient1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .navbar-logo .logo-domain {
+      background: var(--gradient2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .navbar-logo:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 20px rgba(0, 230, 184, 0.5));
+    }
+
+    .navbar-menu {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .navbar-item {
+      position: relative;
+    }
+
+    .navbar-link {
+      display: flex;
+      align-items: center;
+      padding: 12px 20px;
+      color: var(--txt-soft);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      border-radius: var(--radius-sm);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .navbar-link i {
+      margin-right: 8px;
+      font-size: 1.1rem;
+      width: 20px;
+      text-align: center;
+    }
+
+    .navbar-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient1);
+      opacity: 0.1;
+      transition: all 0.4s ease;
+      z-index: -1;
+    }
+
+    .navbar-link:hover::before,
+    .navbar-link.active::before {
+      left: 0;
+      opacity: 0.15;
+    }
+
+    .navbar-link:hover,
+    .navbar-link.active {
+      color: var(--primary);
+      background: rgba(0, 230, 184, 0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 230, 184, 0.2);
+    }
+
+    /* Dropdown Menu */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--card);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      min-width: 220px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      list-style: none;
+      padding: 8px;
+      margin-top: 8px;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-item {
+      margin-bottom: 4px;
+    }
+
+    .dropdown-link {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      color: var(--txt-soft);
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: var(--radius-sm);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dropdown-link i {
+      margin-right: 12px;
+      font-size: 1rem;
+      width: 18px;
+      text-align: center;
+    }
+
+    .dropdown-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient2);
+      opacity: 0.1;
+      transition: all 0.3s ease;
+      z-index: -1;
+    }
+
+    .dropdown-link:hover::before {
+      left: 0;
+      opacity: 0.15;
+    }
+
+    .dropdown-link:hover {
+      color: var(--primary);
+      background: rgba(0, 230, 184, 0.08);
+      transform: translateX(8px);
+    }
+
+    /* CTA Button */
+    .navbar-cta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 24px;
+      background: var(--gradient2);
+      color: var(--txt);
+      border: none;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .navbar-cta i {
+      font-size: 1rem;
+      animation: ctaFloat 2s infinite alternate;
+    }
+
+    @keyframes ctaFloat {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-2px); }
+    }
+
+    .navbar-cta:hover {
+      background: var(--gradient3);
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 15px 40px rgba(185, 108, 255, 0.4);
+    }
+
+    /* Mobile Menu Toggle */
+    .mobile-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: var(--radius-sm);
+      transition: all 0.3s ease;
+      z-index: 1001;
+    }
+
+    .mobile-toggle:hover {
+      background: rgba(0, 230, 184, 0.1);
+    }
+
+    .mobile-toggle span {
+      width: 25px;
+      height: 3px;
+      background: var(--gradient1);
+      margin: 3px 0;
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .mobile-toggle.active span:nth-child(1) {
+      transform: rotate(-45deg) translate(-6px, 6px);
+    }
+
+    .mobile-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-toggle.active span:nth-child(3) {
+      transform: rotate(45deg) translate(-6px, -6px);
+    }
+
+    /* Mobile Sidebar */
+    .mobile-sidebar {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 320px;
+      height: 100vh;
+      background: var(--card);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-left: 1px solid var(--border);
+      box-shadow: -8px 0 40px rgba(0, 0, 0, 0.3);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 999;
+      padding: 80px 0 40px 0;
+      overflow-y: auto;
+    }
+
+    .mobile-sidebar.active {
+      right: 0;
+    }
+
+    .mobile-sidebar::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background: var(--gradient8);
+      opacity: 0.1;
+      filter: blur(80px);
+    }
+
+    .mobile-menu {
+      list-style: none;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .mobile-item {
+      margin-bottom: 8px;
+    }
+
+    .mobile-link {
+      display: flex;
+      align-items: center;
+      padding: 16px 20px;
+      color: var(--txt-soft);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      border-radius: var(--radius);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mobile-link i {
+      margin-right: 16px;
+      font-size: 1.2rem;
+      width: 24px;
+      text-align: center;
+    }
+
+    .mobile-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient3);
+      opacity: 0.1;
+      transition: all 0.4s ease;
+      z-index: -1;
+    }
+
+    .mobile-link:hover::before,
+    .mobile-link.active::before {
+      left: 0;
+      opacity: 0.15;
+    }
+
+    .mobile-link:hover,
+    .mobile-link.active {
+      color: var(--primary);
+      background: rgba(0, 230, 184, 0.1);
+      transform: translateX(8px);
+      box-shadow: 0 8px 25px rgba(0, 230, 184, 0.2);
+    }
+
+    .mobile-dropdown {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: var(--radius-sm);
+      margin-top: 8px;
+    }
+
+    .mobile-dropdown.active {
+      max-height: 300px;
+      padding: 8px 0;
+    }
+
+    .mobile-dropdown-link {
+      display: flex;
+      align-items: center;
+      padding: 12px 24px 12px 60px;
+      color: var(--txt-muted);
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      border-radius: var(--radius-sm);
+      margin: 2px 12px;
+    }
+
+    .mobile-dropdown-link i {
+      margin-right: 12px;
+      font-size: 0.9rem;
+      width: 18px;
+    }
+
+    .mobile-dropdown-link:hover {
+      color: var(--primary);
+      background: rgba(0, 230, 184, 0.08);
+      transform: translateX(8px);
+    }
+
+    .mobile-cta {
+      margin: 20px;
+      padding: 16px 24px;
+      background: var(--gradient2);
+      color: var(--txt);
+      text-decoration: none;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .mobile-cta:hover {
+      background: var(--gradient3);
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px rgba(185, 108, 255, 0.4);
+    }
+
+    /* Overlay */
+    .mobile-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 998;
+    }
+
+    .mobile-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* HERO SECTION (adjusted for navbar) */
+    .hero {
+      padding: 140px 0 60px 0;
+      background: var(--bg);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute; 
+      left: -10vw; 
+      top: -100px; 
+      width: 120vw; 
+      height: 400px;
+      background: var(--gradient8);
+      opacity: 0.08; 
+      filter: blur(80px);
+      z-index: 0;
+      pointer-events: none;
+      animation: heroFloat 12s infinite alternate;
+    }
+
+    @keyframes heroFloat {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(60px) rotate(5deg); }
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+      background: var(--gradient1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: heroTextGlow 3s infinite alternate;
+      letter-spacing: -0.02em;
+      z-index: 1; 
+      position: relative;
+      line-height: 1.2;
+    }
+
+    @keyframes heroTextGlow {
+      0% { 
+        filter: drop-shadow(0 0 10px #00e6b8);
+        transform: scale(1);
+      }
+      100% { 
+        filter: drop-shadow(0 0 30px #3d61ff);
+        transform: scale(1.02);
+      }
+    }
+
+    .hero p {
+      color: var(--txt-soft);
+      font-size: 1.4rem;
+      margin-bottom: 40px;
+      line-height: 1.6;
+      z-index: 1; 
+      position: relative;
+      font-weight: 400;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 50px;
+      background: var(--gradient2);
+      color: var(--txt);
+      border: none;
+      border-radius: var(--radius-lg);
+      font-weight: 700;
+      font-size: 1.2rem;
+      box-shadow: var(--shadow-lg);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      animation: ctaPulse 3s infinite alternate;
+    }
+
+    @keyframes ctaPulse {
+      0% { 
+        box-shadow: 0 12px 50px rgba(185, 108, 255, 0.3);
+        transform: scale(1);
+      }
+      100% { 
+        box-shadow: 0 20px 60px rgba(185, 108, 255, 0.5);
+        transform: scale(1.05);
+      }
+    }
+
+    .hero .cta-btn:hover {
+      background: var(--gradient3);
+      transform: translateY(-4px) scale(1.08);
+      box-shadow: 0 25px 70px rgba(185, 108, 255, 0.6);
+    }
+
+    .hero .cta-btn i {
+      font-size: 1.1rem;
+      animation: rocketFloat 2s infinite alternate;
+    }
+
+    @keyframes rocketFloat {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-4px); }
+    }
+
+    /* SECTION TITLES */
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      background: var(--gradient1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title p {
+      color: var(--txt-soft);
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 400;
+    }
+
+    /* HOSTING PLANS SECTION */
+    .plans {
+      padding: 100px 0;
+      background: var(--bg-secondary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .plans::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -200px;
+      width: 400px;
+      height: 400px;
+      background: var(--gradient5);
+      opacity: 0.05;
+      border-radius: 50%;
+      filter: blur(100px);
+    }
+
+    .plans-type-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
+
+    .plans-type-tab {
+      padding: 12px 30px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--txt-soft);
+      font-weight: 500;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .plans-type-tab::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient1);
+      opacity: 0.1;
+      transition: all 0.3s ease;
+      z-index: -1;
+    }
+
+    .plans-type-tab:hover::before,
+    .plans-type-tab.active::before {
+      left: 0;
+      opacity: 0.15;
+    }
+
+    .plans-type-tab:hover,
+    .plans-type-tab.active {
+      color: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 230, 184, 0.2);
+    }
+
+    .plans-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .plan-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px 30px;
+      text-align: center;
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .plan-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient3);
+      opacity: 0;
+      transition: all 0.4s ease;
+      z-index: -1;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+      border-color: var(--primary);
+    }
+
+    .plan-card:hover::before {
+      opacity: 0.05;
+    }
+
+    .plan-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--gradient2);
+      color: var(--txt);
+      padding: 6px 16px;
+      border-radius: var(--radius);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .plan-card.pro .plan-badge {
+      background: var(--gradient3);
+    }
+
+    .plan-card.biz .plan-badge {
+      background: var(--gradient4);
+    }
+
+    .plan-card.reseller .plan-badge {
+      background: var(--gradient5);
+    }
+
+    .plan-card.master .plan-badge {
+      background: var(--gradient6);
+    }
+
+    .plan-card.alpha .plan-badge {
+      background: var(--gradient7);
+    }
+
+    .plan-type {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--txt);
+      margin-bottom: 16px;
+      margin-top: 10px;
+    }
+
+    .plan-price {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: var(--gradient1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 30px;
+    }
+
+    .plan-features {
+      text-align: left;
+      margin-bottom: 35px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      padding: 8px 0;
+      color: var(--txt-soft);
+      font-size: 1rem;
+    }
+
+    .feature-item i {
+      color: var(--primary);
+      margin-right: 12px;
+      font-size: 1rem;
+    }
+
+    .plan-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 16px 24px;
+      background: var(--gradient2);
+      color: var(--txt);
+      border: none;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      letter-spacing: 0.3px;
+    }
+
+    .plan-button:hover {
+      background: var(--gradient3);
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px rgba(185, 108, 255, 0.4);
+    }
+
+    /* DOMAIN SECTION */
+    .domain-section {
+      padding: 100px 0;
+      background: var(--bg);
+      position: relative;
+    }
+
+    .domain-search {
+      margin-bottom: 60px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .search-box {
+      display: flex;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 8px;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .search-box:focus-within {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 230, 184, 0.1);
+    }
+
+    #domain-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      padding: 16px 20px;
+      color: var(--txt);
+      font-size: 1.1rem;
+      outline: none;
+      font-weight: 500;
+    }
+
+    #domain-input::placeholder {
+      color: var(--txt-muted);
+    }
+
+    .search-btn {
+      padding: 16px 30px;
+      background: var(--gradient2);
+      color: var(--txt);
+      border: none;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .search-btn:hover {
+      background: var(--gradient3);
+      transform: scale(1.05);
+    }
+
+    .domain-pricing {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .domain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .domain-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px 24px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .domain-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient1);
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: -1;
+    }
+
+    .domain-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      border-color: var(--primary);
+    }
+
+    .domain-card:hover::before {
+      opacity: 0.03;
+    }
+
+    .domain-card.popular {
+      border-color: var(--primary);
+      position: relative;
+    }
+
+    .domain-card.popular::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient3);
+      opacity: 0.05;
+      z-index: -1;
+    }
+
+    .domain-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--gradient3);
+      color: var(--txt);
+      padding: 4px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .domain-extension {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--txt);
+      margin-bottom: 12px;
+    }
+
+    .domain-price {
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: var(--gradient2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 20px;
+    }
+
+    .domain-price span {
+      font-size: 1rem;
+      color: var(--txt-muted);
+    }
+
+    .domain-features {
+      text-align: left;
+      margin-bottom: 25px;
+    }
+
+    .domain-feature {
+      display: flex;
+      align-items: center;
+      padding: 4px 0;
+      color: var(--txt-soft);
+      font-size: 0.95rem;
+    }
+
+    .domain-feature i {
+      color: var(--primary);
+      margin-right: 8px;
+      font-size: 0.9rem;
+    }
+
+    .domain-btn {
+      width: 100%;
+      padding: 12px 20px;
+      background: var(--gradient2);
+      color: var(--txt);
+      border: none;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .domain-btn:hover {
+      background: var(--gradient3);
+      transform: translateY(-2px);
+    }
+
+    /* SERVICES SECTION */
+    .services-section {
+      padding: 100px 0;
+      background: var(--bg-secondary);
+      position: relative;
+    }
+
+    .services-section::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -200px;
+      width: 400px;
+      height: 400px;
+      background: var(--gradient7);
+      opacity: 0.05;
+      border-radius: 50%;
+      filter: blur(100px);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px 30px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient4);
+      opacity: 0;
+      transition: all 0.4s ease;
+      z-index: -1;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+      border-color: var(--primary);
+    }
+
+    .service-card:hover::before {
+      opacity: 0.05;
+    }
+
+    .service-icon {
+      width: 70px;
+      height: 70px;
+      background: var(--gradient2);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      transition: all 0.3s ease;
+    }
+
+    .service-icon i {
+      font-size: 1.8rem;
+      color: var(--txt);
+    }
+
+    .service-card:hover .service-icon {
+      background: var(--gradient3);
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .service-content h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--txt);
+      margin-bottom: 12px;
+    }
+
+    .service-content p {
+      color: var(--txt-soft);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .service-price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      background: var(--gradient1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 20px;
+    }
+
+    .service-features {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+
+    .service-features li {
+      display: flex;
+      align-items: center;
+      padding: 6px 0;
+      color: var(--txt-soft);
+      font-size: 0.95rem;
+    }
+
+    .service-features li i {
+      color: var(--primary);
+      margin-right: 10px;
+      font-size: 0.9rem;
+    }
+
+    .service-btn {
+      width: 100%;
+      padding: 14px 24px;
+      background: var(--gradient2);
+      color: var(--txt);
+      border: none;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      letter-spacing: 0.3px;
+    }
+
+    .service-btn:hover {
+      background: var(--gradient3);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(185, 108, 255, 0.3);
+    }
+
+    /* FEATURES SECTION */
+    .features {
+      padding: 100px 0;
+      background: var(--bg);
+      position: relative;
+    }
+
+    .features::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -150px;
+      width: 300px;
+      height: 300px;
+      background: var(--gradient9);
+      opacity: 0.05;
+      border-radius: 50%;
+      filter: blur(80px);
+      transform: translateY(-50%);
+    }
+
+    .features-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px 25px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient5);
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: -1;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      border-color: var(--primary);
+    }
+
+    .feature-card:hover::before {
+      opacity: 0.03;
+    }
+
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--gradient3);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      transition: all 0.3s ease;
+    }
+
+    .feature-icon i {
+      font-size: 1.5rem;
+      color: var(--txt);
+    }
+
+    .feature-card:hover .feature-icon {
+      background: var(--gradient4);
+      transform: scale(1.1);
+    }
+
+    .feature-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--txt);
+      margin-bottom: 12px;
+    }
+
+    .feature-description {
+      color: var(--txt-soft);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* SUPPORT SECTION */
+    .support-section {
+      padding: 100px 0;
+      background: var(--bg-secondary);
+      position: relative;
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto 60px;
+    }
+
+    .support-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .support-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient6);
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: -1;
+    }
+
+    .support-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      border-color: var(--primary);
+    }
+
+    .support-card:hover::before {
+      opacity: 0.05;
+    }
+
+    .support-icon {
+      width: 70px;
+      height: 70px;
+      background: var(--gradient2);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      transition: all 0.3s ease;
+    }
+
+    .support-icon i {
+      font-size: 1.8rem;
+      color: var(--txt);
+    }
+
+    .support-card:hover .support-icon {
+      background: var(--gradient3);
+      transform: scale(1.1);
+    }
+
+    .support-card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--txt);
+      margin-bottom: 12px;
+    }
+
+    .support-card p {
+      color: var(--txt-soft);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .support-btn {
+      padding: 12px 30px;
+      background: var(--gradient2);
+      color: var(--txt);
+      border: none;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .support-btn:hover {
+      background: var(--gradient3);
+      transform: translateY(-2px);
+    }
+
+    .support-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .stat-item {
+      padding: 20px;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: var(--gradient1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      color: var(--txt-soft);
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    /* CONTACT SECTION */
+    .contact-section {
+      padding: 100px 0;
+      background: var(--bg);
+      position: relative;
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    .contact-info {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      padding: 20px;
+      background: rgba(0, 230, 184, 0.05);
+      border-radius: var(--radius);
+      transition: all 0.3s ease;
+    }
+
+    .contact-item:hover {
+      background: rgba(0, 230, 184, 0.1);
+      transform: translateX(10px);
+    }
+
+    .contact-item-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--gradient2);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+
+    .contact-item-icon i {
+      font-size: 1.3rem;
+      color: var(--txt);
+    }
+
+    .contact-item-content h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--txt);
+      margin-bottom: 4px;
+    }
+
+    .contact-item-content p {
+      color: var(--txt-soft);
+      font-size: 1rem;
+    }
+
+    .contact-form {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      color: var(--txt);
+      font-weight: 500;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 14px 16px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--txt);
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      font-family: inherit;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 230, 184, 0.1);
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 16px 24px;
+      background: var(--gradient2);
+      color: var(--txt);
+      border: none;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      letter-spacing: 0.3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .submit-btn:hover {
+      background: var(--gradient3);
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px rgba(185, 108, 255, 0.4);
+    }
+
+    /* FOOTER */
+    .footer {
+      background: var(--card);
+      border-top: 1px solid var(--border);
+      padding: 60px 0 30px;
+      position: relative;
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--gradient1);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .footer-section h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--txt);
+      margin-bottom: 20px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      text-decoration: none;
+    }
+
+    .footer-logo i {
+      margin-right: 12px;
+      background: var(--gradient3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 1.8rem;
+    }
+
+    .footer-logo .logo-text {
+      background: var(--gradient1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-logo .logo-domain {
+      background: var(--gradient2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-description {
+      color: var(--txt-soft);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: var(--gradient2);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--txt);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: var(--gradient3);
+      transform: translateY(-3px);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--txt-soft);
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+      transform: translateX(5px);
+    }
+
+    .footer-links a i {
+      margin-right: 8px;
+      font-size: 0.9rem;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding: 30px 0;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .footer-bottom-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .copyright {
+      color: var(--txt-muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .footer-bottom-links a {
+      color: var(--txt-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .footer-bottom-links a:hover {
+      color: var(--primary);
+    }
+
+    /* SCROLL TO TOP BUTTON */
+    .scroll-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--gradient2);
+      border: none;
+      border-radius: 50%;
+      color: var(--txt);
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 1000;
+      box-shadow: var(--shadow);
+    }
+
+    .scroll-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-to-top:hover {
+      background: var(--gradient3);
+      transform: translateY(-3px);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 1024px) {
+      .navbar-container {
+        padding: 16px 20px;
+      }
+
+      .navbar-menu {
+        gap: 4px;
+      }
+
+      .navbar-link {
+        padding: 10px 16px;
+        font-size: 0.95rem;
+      }
+
+      .navbar-cta {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+
+      .plans-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      }
+
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar-menu,
+      .navbar-cta {
+        display: none;
+      }
+
+      .mobile-toggle {
+        display: flex;
+      }
+
+      .hero {
+        padding: 120px 0 40px 0;
+      }
+      
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      .section-title h2 {
+        font-size: 2.2rem;
+      }
+
+      .plans-type-tabs {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .plans-container {
+        grid-template-columns: 1fr;
+      }
+
+      .domain-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .features-container {
+        grid-template-columns: 1fr;
+      }
+
+      .support-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .support-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar-container {
+        padding: 12px 16px;
+      }
+
+      .mobile-sidebar {
+        width: 280px;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .container {
+        padding: 0 16px;
+      }
+
+      .support-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-number {
+        font-size: 2rem;
+      }
+    }
+
+    /* Performance optimizations */
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .navbar,
+    .mobile-sidebar,
+    .dropdown-menu {
+      will-change: transform;
+    }
+
+    /* Loading states */
+    .loading {
+      opacity: 0.7;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-container">
+      <a href="#home" class="navbar-logo">
+        <i class="fas fa-server"></i>
+        <span class="logo-text">INTERCLOUDNET.</span><span class="logo-domain">ASIA</span>
+      </a>
+
+      <ul class="navbar-menu">
+        <li class="navbar-item">
+          <a href="#home" class="navbar-link active">
+            <i class="fas fa-home"></i>
+            Trang chủ
+          </a>
+        </li>
+        <li class="navbar-item dropdown">
+          <a href="#hosting" class="navbar-link">
+            <i class="fas fa-server"></i>
+            Hosting
+            <i class="fas fa-chevron-down" style="margin-left: 8px; font-size: 0.8rem;"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item">
+              <a href="#" class="dropdown-link">
+                <i class="fas fa-gift"></i>
+                Hosting Free
+              </a>
+            </li>
+            <li class="dropdown-item">
+              <a href="#" class="dropdown-link">
+                <i class="fas fa-star"></i>
+                Hosting Pro
+              </a>
+            </li>
+            <li class="dropdown-item">
+              <a href="#" class="dropdown-link">
+                <i class="fas fa-building"></i>
+                Hosting Business
+              </a>
+            </li>
+            <li class="dropdown-item">
+              <a href="#" class="dropdown-link">
+                <i class="fas fa-users"></i>
+                Reseller Hosting
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="navbar-item">
+          <a href="#domain" class="navbar-link">
+            <i class="fas fa-globe"></i>
+            Tên miền
+          </a>
+        </li>
+        <li class="navbar-item dropdown">
+          <a href="#services" class="navbar-link">
+            <i class="fas fa-cogs"></i>
+            Dịch vụ
+            <i class="fas fa-chevron-down" style="margin-left: 8px; font-size: 0.8rem;"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item">
+              <a href="#" class="dropdown-link">
+                <i class="fas fa-shield-alt"></i>
+                SSL Certificate
+              </a>
+            </li>
+            <li class="dropdown-item">
+              <a href="#" class="dropdown-link">
+                <i class="fas fa-backup"></i>
+                Website Backup
+              </a>
+            </li>
+            <li class="dropdown-item">
+              <a href="#" class="dropdown-link">
+                <i class="fas fa-envelope"></i>
+                Email Hosting
+              </a>
+            </li>
+            <li class="dropdown-item">
+              <a href="#" class="dropdown-link">
+                <i class="fas fa-cloud"></i>
+                Cloud VPS
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="navbar-item">
+          <a href="#support" class="navbar-link">
+            <i class="fas fa-headset"></i>
+            Hỗ trợ
+          </a>
+        </li>
+        <li class="navbar-item">
+          <a href="#contact" class="navbar-link">
+            <i class="fas fa-phone"></i>
+            Liên hệ
+          </a>
+        </li>
+      </ul>
+
+      <a href="#signup" class="navbar-cta">
+        <i class="fas fa-rocket"></i>
+        Đăng ký ngay
+      </a>
+
+      <div class="mobile-toggle" id="mobile-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE SIDEBAR -->
+  <div class="mobile-sidebar" id="mobile-sidebar">
+    <ul class="mobile-menu">
+      <li class="mobile-item">
+        <a href="#home" class="mobile-link active">
+          <i class="fas fa-home"></i>
+          Trang chủ
+        </a>
+      </li>
+      <li class="mobile-item">
+        <a href="#hosting" class="mobile-link" onclick="toggleMobileDropdown(event)">
+          <i class="fas fa-server"></i>
+          Hosting
+          <i class="fas fa-chevron-down" style="margin-left: auto; font-size: 0.9rem; transition: transform 0.3s ease;"></i>
+        </a>
+        <div class="mobile-dropdown">
+          <a href="#" class="mobile-dropdown-link">
+            <i class="fas fa-gift"></i>
+            Hosting Free
+          </a>
+          <a href="#" class="mobile-dropdown-link">
+            <i class="fas fa-star"></i>
+            Hosting Pro
+          </a>
+          <a href="#" class="mobile-dropdown-link">
+            <i class="fas fa-building"></i>
+            Hosting Business
+          </a>
+          <a href="#" class="mobile-dropdown-link">
+            <i class="fas fa-users"></i>
+            Reseller Hosting
+          </a>
+        </div>
+      </li>
+      <li class="mobile-item">
+        <a href="#domain" class="mobile-link">
+          <i class="fas fa-globe"></i>
+          Tên miền
+        </a>
+      </li>
+      <li class="mobile-item">
+        <a href="#services" class="mobile-link" onclick="toggleMobileDropdown(event)">
+          <i class="fas fa-cogs"></i>
+          Dịch vụ
+          <i class="fas fa-chevron-down" style="margin-left: auto; font-size: 0.9rem; transition: transform 0.3s ease;"></i>
+        </a>
+        <div class="mobile-dropdown">
+          <a href="#" class="mobile-dropdown-link">
+            <i class="fas fa-shield-alt"></i>
+            SSL Certificate
+          </a>
+          <a href="#" class="mobile-dropdown-link">
+            <i class="fas fa-backup"></i>
+            Website Backup
+          </a>
+          <a href="#" class="mobile-dropdown-link">
+            <i class="fas fa-envelope"></i>
+            Email Hosting
+          </a>
+          <a href="#" class="mobile-dropdown-link">
+            <i class="fas fa-cloud"></i>
+            Cloud VPS
+          </a>
+        </div>
+      </li>
+      <li class="mobile-item">
+        <a href="#support" class="mobile-link">
+          <i class="fas fa-headset"></i>
+          Hỗ trợ
+        </a>
+      </li>
+      <li class="mobile-item">
+        <a href="#contact" class="mobile-link">
+          <i class="fas fa-phone"></i>
+          Liên hệ
+        </a>
+      </li>
+    </ul>
+
+    <a href="#signup" class="mobile-cta">
+      <i class="fas fa-rocket"></i>
+      Đăng ký ngay
+    </a>
+  </div>
+
+  <!-- MOBILE OVERLAY -->
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container">
+        <h1>Hosting tối ưu chuẩn chuyên nghiệp</h1>
+        <p>SSD NVMe siêu tốc, bảo mật chuẩn quốc tế, uptime 99.9%, hỗ trợ 24/7.<br>Đăng ký miễn phí, không cần thẻ tín dụng!</p>
+        <a href="#plans" class="cta-btn">
+          <i class="fas fa-rocket"></i> 
+          Đăng ký Hosting ngay
+        </a>
+      </div>
+    </section>
+
+    <!-- HOSTING PLANS SECTION -->
+    <section id="hosting" class="plans">
+      <div class="container">
+        <div class="section-title">
+          <h2>Bảng giá Hosting</h2>
+          <p>Lựa chọn giải pháp phù hợp cho website của bạn với các gói hosting đa dạng</p>
+        </div>
+        
+        <div class="plans-type-tabs" id="hosting-tabs">
+          <button class="plans-type-tab active" data-type="all">Tất cả gói</button>
+          <button class="plans-type-tab" data-type="personal">Cá nhân</button>
+          <button class="plans-type-tab" data-type="business">Doanh nghiệp</button>
+          <button class="plans-type-tab" data-type="reseller">Reseller</button>
+        </div>
+        
+        <div class="plans-container" id="hosting-plans">
+          <!-- Personal Hosting -->
+          <div class="plan-card free" data-type="personal">
+            <div class="plan-badge">Miễn phí</div>
+            <div class="plan-type">Hosting Free</div>
+            <div class="plan-price">0đ /tháng</div>
+            <div class="plan-features">
+              <div class="feature-item"><i class="fas fa-check-circle"></i> 3GB SSD Storage</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Băng thông không giới hạn</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> SSL miễn phí</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> 1 website</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> cPanel Control Panel</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Hỗ trợ 24/7</div>
+            </div>
+            <a href="#" class="plan-button">Dùng thử miễn phí</a>
+          </div>
+
+          <div class="plan-card pro" data-type="personal">
+            <div class="plan-badge">Khuyên dùng</div>
+            <div class="plan-type">Hosting Pro</div>
+            <div class="plan-price">49.000đ /tháng</div>
+            <div class="plan-features">
+              <div class="feature-item"><i class="fas fa-check-circle"></i> 30GB NVMe SSD</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Băng thông không giới hạn</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> SSL miễn phí</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Website không giới hạn</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Backup tự động hàng ngày</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> WordPress tối ưu</div>
+            </div>
+            <a href="#" class="plan-button">Đăng ký ngay</a>
+          </div>
+
+          <div class="plan-card biz" data-type="business">
+            <div class="plan-badge">Doanh nghiệp</div>
+            <div class="plan-type">Business Pro</div>
+            <div class="plan-price">99.000đ /tháng</div>
+            <div class="plan-features">
+              <div class="feature-item"><i class="fas fa-check-circle"></i> 100GB NVMe SSD</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Băng thông không giới hạn</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Website không giới hạn</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Tên miền miễn phí</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Email không giới hạn</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Hỗ trợ ưu tiên 24/7</div>
+            </div>
+            <a href="#" class="plan-button">Đăng ký ngay</a>
+          </div>
+
+          <div class="plan-card reseller" data-type="reseller">
+            <div class="plan-badge">Phân phối</div>
+            <div class="plan-type">Reseller Hosting</div>
+            <div class="plan-price">199.000đ /tháng</div>
+            <div class="plan-features">
+              <div class="feature-item"><i class="fas fa-check-circle"></i> 200GB SSD Storage</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Quản lý nhiều tài khoản</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> WHM/cPanel đầy đủ</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> SSL miễn phí cho tất cả</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Hỗ trợ white label</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> API tích hợp</div>
+            </div>
+            <a href="#" class="plan-button">Đăng ký Reseller</a>
+          </div>
+
+          <div class="plan-card master" data-type="reseller">
+            <div class="plan-badge">Master</div>
+            <div class="plan-type">Master Reseller</div>
+            <div class="plan-price">399.000đ /tháng</div>
+            <div class="plan-features">
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Tạo Reseller không giới hạn</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> 350GB SSD Storage</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Quản lý đa cấp</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Root WHM Access</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Dedicated IP</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Hỗ trợ kỹ thuật chuyên sâu</div>
+            </div>
+            <a href="#" class="plan-button">Đăng ký Master</a>
+          </div>
+
+          <div class="plan-card alpha" data-type="reseller">
+            <div class="plan-badge">Alpha</div>
+            <div class="plan-type">Alpha Reseller</div>
+            <div class="plan-price">699.000đ /tháng</div>
+            <div class="plan-features">
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Tạo Master không giới hạn</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> 600GB SSD Storage</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Toàn quyền quản lý hệ thống</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Multiple Dedicated IPs</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Private nameservers</div>
+              <div class="feature-item"><i class="fas fa-check-circle"></i> Support manager chuyên biệt</div>
+            </div>
+            <a href="#" class="plan-button">Đăng ký Alpha</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOMAIN SECTION -->
+    <section id="domain" class="domain-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Tên miền giá tốt</h2>
+          <p>Đăng ký tên miền với giá cạnh tranh và quản lý dễ dàng</p>
+        </div>
+
+        <div class="domain-search">
+          <div class="search-box">
+            <input type="text" id="domain-input" placeholder="Nhập tên miền bạn muốn..." />
+            <button class="search-btn" onclick="searchDomain()">
+              <i class="fas fa-search"></i>
+              Tìm kiếm
+            </button>
+          </div>
+        </div>
+
+        <div class="domain-pricing">
+          <div class="domain-grid">
+            <div class="domain-card">
+              <div class="domain-extension">.com</div>
+              <div class="domain-price">299.000đ<span>/năm</span></div>
+              <div class="domain-features">
+                <div class="domain-feature"><i class="fas fa-check"></i> DNS miễn phí</div>
+                <div class="domain-feature"><i class="fas fa-check"></i> Email forwarding</div>
+                <div class="domain-feature"><i class="fas fa-check"></i> Domain lock</div>
+              </div>
+              <button class="domain-btn">Đăng ký ngay</button>
+            </div>
+
+            <div class="domain-card popular">
+              <div class="domain-badge">Phổ biến</div>
+              <div class="domain-extension">.vn</div>
+              <div class="domain-price">399.000đ<span>/năm</span></div>
+              <div class="domain-features">
+                <div class="domain-feature"><i class="fas fa-check"></i> DNS miễn phí</div>
+                <div class="domain-feature"><i class="fas fa-check"></i> Email forwarding</div>
+                <div class="domain-feature"><i class="fas fa-check"></i> WHOIS privacy</div>
+              </div>
+              <button class="domain-btn">Đăng ký ngay</button>
+            </div>
+
+            <div class="domain-card">
+              <div class="domain-extension">.net</div>
+              <div class="domain-price">349.000đ<span>/năm</span></div>
+              <div class="domain-features">
+                <div class="domain-feature"><i class="fas fa-check"></i> DNS miễn phí</div>
+                <div class="domain-feature"><i class="fas fa-check"></i> Email forwarding</div>
+                <div class="domain-feature"><i class="fas fa-check"></i> Domain lock</div>
+              </div>
+              <button class="domain-btn">Đăng ký ngay</button>
+            </div>
+
+            <div class="domain-card">
+              <div class="domain-extension">.org</div>
+              <div class="domain-price">399.000đ<span>/năm</span></div>
+              <div class="domain-features">
+                <div class="domain-feature"><i class="fas fa-check"></i> DNS miễn phí</div>
+                <div class="domain-feature"><i class="fas fa-check"></i> Email forwarding</div>
+                <div class="domain-feature"><i class="fas fa-check"></i> Domain lock</div>
+              </div>
+              <button class="domain-btn">Đăng ký ngay</button>
+            </div>
+
+            <div class="domain-card">
+              <div class="domain-extension">.info</div>
+              <div class="domain-price">199.000đ<span>/năm</span></div>
+              <div class="domain-features">
+                <div class="domain-feature"><i class="fas fa-check"></i> DNS miễn phí</div>
+                <div class="domain-feature"><i class="fas fa-check"></i> Email forwarding</div>
+                <div class="domain-feature"><i class="fas fa-check"></i> Domain lock</div>
+              </div>
+              <button class="domain-btn">Đăng ký ngay</button>
+            </div>
+
+            <div class="domain-card">
+              <div class="domain-extension">.asia</div>
+              <div class="domain-price">599.000đ<span>/năm</span></div>
+              <div class="domain-features">
+                <div class="domain-feature"><i class="fas fa-check"></i> DNS miễn phí</div>
+                <div class="domain-feature"><i class="fas fa-check"></i> Email forwarding</div>
+                <div class="domain-feature"><i class="fas fa-check"></i> Premium support</div>
+              </div>
+              <button class="domain-btn">Đăng ký ngay</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="services-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Dịch vụ chuyên nghiệp</h2>
+          <p>Giải pháp toàn diện cho website và doanh nghiệp của bạn</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="service-content">
+              <h3>SSL Certificate</h3>
+              <p>Chứng chỉ SSL bảo mật cao cấp, mã hóa 256-bit để bảo vệ dữ liệu khách hàng.</p>
+              <div class="service-price">Từ 99.000đ/năm</div>
+              <ul class="service-features">
+                <li><i class="fas fa-check"></i> Mã hóa 256-bit</li>
+                <li><i class="fas fa-check"></i> Tự động gia hạn</li>
+                <li><i class="fas fa-check"></i> Wildcard SSL</li>
+                <li><i class="fas fa-check"></i> 99.9% browser trust</li>
+              </ul>
+              <button class="service-btn">Đặt mua ngay</button>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="service-content">
+              <h3>Email Hosting</h3>
+              <p>Email doanh nghiệp chuyên nghiệp với tên miền riêng và bảo mật cao.</p>
+              <div class="service-price">Từ 49.000đ/tháng</div>
+              <ul class="service-features">
+                <li><i class="fas fa-check"></i> 10GB/mailbox</li>
+                <li><i class="fas fa-check"></i> Webmail hiện đại</li>
+                <li><i class="fas fa-check"></i> IMAP/POP3/SMTP</li>
+                <li><i class="fas fa-check"></i> Anti-spam/virus</li>
+              </ul>
+              <button class="service-btn">Đặt mua ngay</button>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <div class="service-content">
+              <h3>Cloud VPS</h3>
+              <p>Máy chủ ảo hiệu năng cao với SSD NVMe và băng thông lớn.</p>
+              <div class="service-price">Từ 299.000đ/tháng</div>
+              <ul class="service-features">
+                <li><i class="fas fa-check"></i> 100% SSD NVMe</li>
+                <li><i class="fas fa-check"></i> Full root access</li>
+                <li><i class="fas fa-check"></i> 99.9% uptime</li>
+                <li><i class="fas fa-check"></i> Snapshot backup</li>
+              </ul>
+              <button class="service-btn">Đặt mua ngay</button>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-backup"></i>
+            </div>
+            <div class="service-content">
+              <h3>Website Backup</h3>
+              <p>Sao lưu tự động hàng ngày, bảo vệ dữ liệu website 100% an toàn.</p>
+              <div class="service-price">Từ 29.000đ/tháng</div>
+              <ul class="service-features">
+                <li><i class="fas fa-check"></i> Backup hàng ngày</li>
+                <li><i class="fas fa-check"></i> Lưu trữ 30 ngày</li>
+                <li><i class="fas fa-check"></i> One-click restore</li>
+                <li><i class="fas fa-check"></i> Multiple locations</li>
+              </ul>
+              <button class="service-btn">Đặt mua ngay</button>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-tachometer-alt"></i>
+            </div>
+            <div class="service-content">
+              <h3>CDN Service</h3>
+              <p>Mạng phân phối nội dung toàn cầu, tăng tốc website lên 10x.</p>
+              <div class="service-price">Từ 99.000đ/tháng</div>
+              <ul class="service-features">
+                <li><i class="fas fa-check"></i> 200+ locations</li>
+                <li><i class="fas fa-check"></i> DDoS protection</li>
+                <li><i class="fas fa-check"></i> Image optimization</li>
+                <li><i class="fas fa-check"></i> Real-time analytics</li>
+              </ul>
+              <button class="service-btn">Đặt mua ngay</button>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="service-content">
+              <h3>Website Development</h3>
+              <p>Thiết kế và phát triển website chuyên nghiệp, responsive mọi thiết bị.</p>
+              <div class="service-price">Từ 2.999.000đ</div>
+              <ul class="service-features">
+                <li><i class="fas fa-check"></i> Responsive design</li>
+                <li><i class="fas fa-check"></i> SEO friendly</li>
+                <li><i class="fas fa-check"></i> CMS tùy chọn</li>
+                <li><i class="fas fa-check"></i> 6 tháng bảo hành</li>
+              </ul>
+              <button class="service-btn">Tư vấn ngay</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features">
+      <div class="container">
+        <div class="section-title">
+          <h2>Tính năng nổi bật</h2>
+          <p>Hosting hiện đại với hiệu suất tối ưu và bảo mật tuyệt đối</p>
+        </div>
+        <div class="features-container">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+            <div class="feature-title">Tốc độ NVMe vượt trội</div>
+            <div class="feature-description">Ổ cứng NVMe SSD siêu tốc, giảm thời gian tải trang xuống còn vài giây.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="feature-title">Bảo mật SSL miễn phí</div>
+            <div class="feature-description">Chứng chỉ SSL Let's Encrypt tự động, bảo vệ dữ liệu 100% an toàn.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-sync"></i></div>
+            <div class="feature-title">99.9% uptime đảm bảo</div>
+            <div class="feature-description">Hạ tầng máy chủ dự phòng, đảm bảo website luôn online 24/7.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-magic"></i></div>
+            <div class="feature-title">Cài đặt 1-click</div>
+            <div class="feature-description">WordPress, Joomla, Drupal... cài đặt chỉ với một cú nhấp chuột.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-headset"></i></div>
+            <div class="feature-title">Hỗ trợ 24/7 chuyên nghiệp</div>
+            <div class="feature-description">Đội ngũ kỹ thuật viên chuyên nghiệp sẵn sàng hỗ trợ mọi lúc.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-globe"></i></div>
+            <div class="feature-title">Máy chủ toàn cầu</div>
+            <div class="feature-description">Chọn vị trí máy chủ lý tưởng để tối ưu tốc độ truy cập từ bất kỳ đâu.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUPPORT SECTION -->
+    <section id="support" class="support-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Hỗ trợ 24/7</h2>
+          <p>Đội ngũ chuyên gia luôn sẵn sàng hỗ trợ bạn mọi lúc mọi nơi</p>
+        </div>
+
+        <div class="support-grid">
+          <div class="support-card">
+            <div class="support-icon">
+              <i class="fas fa-ticket-alt"></i>
+            </div>
+            <h3>Support Ticket</h3>
+            <p>Gửi yêu cầu hỗ trợ chi tiết, chúng tôi sẽ phản hồi trong 15 phút.</p>
+            <button class="support-btn">Tạo ticket</button>
+          </div>
+
+          <div class="support-card">
+            <div class="support-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <h3>Hotline</h3>
+            <p>Gọi điện trực tiếp cho đội ngũ kỹ thuật chuyên nghiệp 24/7.</p>
+            <button class="support-btn">1900 1234</button>
+          </div>
+
+          <div class="support-card">
+            <div class="support-icon">
+              <i class="fas fa-book"></i>
+            </div>
+            <h3>Knowledge Base</h3>
+            <p>Thư viện kiến thức phong phú với hướng dẫn chi tiết từng bước.</p>
+            <button class="support-btn">Xem hướng dẫn</button>
+          </div>
+        </div>
+
+          
+         <div class="support-card">
+            <div class="support-icon">
+              <i class="fas fa-comments"></i>
+            </div>
+            <h3>Live Chat</h3>
+            <p>Trò chuyện trực tiếp với đội ngũ hỗ trợ, phản hồi trong vòng 30 giây.</p>
+            <button class="support-btn">Chat ngay</button>
+          </div>
+        </div>
+
+        <div class="support-stats">
+          <div class="stat-item">
+            <div class="stat-number">< 30s</div>
+            <div class="stat-label">Thời gian phản hồi</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Hỗ trợ liên tục</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">99.9%</div>
+            <div class="stat-label">Độ hài lòng</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">10,000+</div>
+            <div class="stat-label">Khách hàng tin tưởng</div>
+          </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Liên hệ với chúng tôi</h2>
+          <p>Sẵn sàng tư vấn và hỗ trợ bạn tìm giải pháp hosting tối ưu</p>
+        </div>
+
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-item-content">
+                <h4>Địa chỉ văn phòng</h4>
+                <p>123 Đường ABC, Quận 1, TP.HCM, Việt Nam</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-item-content">
+                <h4>Số điện thoại</h4>
+                <p>+84 123 456 789</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-item-content">
+                <h4>Email liên hệ</h4>
+                <p>support@intercloudnet.asia</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="contact-item-content">
+                <h4>Giờ làm việc</h4>
+                <p>24/7 - Hỗ trợ liên tục</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <form id="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Họ và tên *</label>
+                  <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">Số điện thoại</label>
+                  <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                  <label for="service">Dịch vụ quan tâm</label>
+                  <select id="service" name="service">
+                    <option value="">Chọn dịch vụ</option>
+                    <option value="hosting">Web Hosting</option>
+                    <option value="domain">Tên miền</option>
+                    <option value="vps">Cloud VPS</option>
+                    <option value="ssl">SSL Certificate</option>
+                    <option value="email">Email Hosting</option>
+                    <option value="other">Khác</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Tiêu đề</label>
+                <input type="text" id="subject" name="subject">
+              </div>
+
+              <div class="form-group">
+                <label for="message">Nội dung *</label>
+                <textarea id="message" name="message" placeholder="Mô tả chi tiết yêu cầu của bạn..." required></textarea>
+              </div>
+
+              <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i>
+                Gửi tin nhắn
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <a href="#" class="footer-logo">
+          <i class="fas fa-server"></i>
+          <span class="logo-text">INTERCLOUDNET.</span><span class="logo-domain">ASIA</span>
+        </a>
+        <p class="footer-description">
+          Nhà cung cấp hosting và tên miền hàng đầu Việt Nam với hơn 10 năm kinh nghiệm. 
+          Chúng tôi cam kết mang đến dịch vụ tốt nhất với giá cả hợp lý.
+        </p>
+        <div class="footer-social">
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Dịch vụ</h3>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-server"></i> Web Hosting</a></li>
+          <li><a href="#"><i class="fas fa-globe"></i> Tên miền</a></li>
+          <li><a href="#"><i class="fas fa-cloud"></i> Cloud VPS</a></li>
+          <li><a href="#"><i class="fas fa-shield-alt"></i> SSL Certificate</a></li>
+          <li><a href="#"><i class="fas fa-envelope"></i> Email Hosting</a></li>
+          <li><a href="#"><i class="fas fa-backup"></i> Website Backup</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Hỗ trợ</h3>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-question-circle"></i> Trung tâm trợ giúp</a></li>
+          <li><a href="#"><i class="fas fa-ticket-alt"></i> Gửi ticket</a></li>
+          <li><a href="#"><i class="fas fa-comments"></i> Live Chat</a></li>
+          <li><a href="#"><i class="fas fa-phone"></i> Hotline: 1900 1234</a></li>
+          <li><a href="#"><i class="fas fa-book"></i> Hướng dẫn sử dụng</a></li>
+          <li><a href="#"><i class="fas fa-tools"></i> Kiểm tra tình trạng</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Công ty</h3>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-info-circle"></i> Giới thiệu</a></li>
+          <li><a href="#"><i class="fas fa-newspaper"></i> Tin tức</a></li>
+          <li><a href="#"><i class="fas fa-briefcase"></i> Tuyển dụng</a></li>
+          <li><a href="#"><i class="fas fa-handshake"></i> Đối tác</a></li>
+          <li><a href="#"><i class="fas fa-file-contract"></i> Điều khoản</a></li>
+          <li><a href="#"><i class="fas fa-user-shield"></i> Chính sách bảo mật</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <div class="copyright">
+          <p>&copy; 2024 INTERCLOUDNET.ASIA. Tất cả quyền được bảo lưu.</p>
+        </div>
+        <ul class="footer-bottom-links">
+          <li><a href="#">Điều khoản sử dụng</a></li>
+          <li><a href="#">Chính sách bảo mật</a></li>
+          <li><a href="#">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCROLL TO TOP BUTTON -->
+  <button class="scroll-to-top" id="scroll-to-top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileSidebar = document.getElementById('mobile-sidebar');
+    const mobileOverlay = document.getElementById('mobile-overlay');
+    const body = document.body;
+
+    function toggleMobileMenu() {
+      mobileToggle.classList.toggle('active');
+      mobileSidebar.classList.toggle('active');
+      mobileOverlay.classList.toggle('active');
+      body.style.overflow = mobileSidebar.classList.contains('active') ? 'hidden' : '';
+    }
+
+    mobileToggle.addEventListener('click', toggleMobileMenu);
+    mobileOverlay.addEventListener('click', toggleMobileMenu);
+
+    // Close mobile menu when clicking on links
+    const mobileLinks = document.querySelectorAll('.mobile-link:not([onclick])');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        if (!this.classList.contains('dropdown-toggle')) {
+          toggleMobileMenu();
+        }
+      });
+    });
+
+    // Mobile dropdown toggle
+    function toggleMobileDropdown(event) {
+      event.preventDefault();
+      const link = event.currentTarget;
+      const dropdown = link.nextElementSibling;
+      const chevron = link.querySelector('.fa-chevron-down');
+      
+      dropdown.classList.toggle('active');
+      chevron.style.transform = dropdown.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+    }
+
+    // Active link highlighting
+    function setActiveLink() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.navbar-link, .mobile-link');
+      
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= sectionTop - 200) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        const href = link.getAttribute('href');
+        if (href === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', setActiveLink);
+    window.addEventListener('load', setActiveLink);
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offsetTop = target.offsetTop - 80; // Account for navbar height
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(event) {
+      const dropdowns = document.querySelectorAll('.dropdown');
+      dropdowns.forEach(dropdown => {
+        if (!dropdown.contains(event.target)) {
+          const menu = dropdown.querySelector('.dropdown-menu');
+          if (menu) {
+            menu.style.opacity = '0';
+            menu.style.visibility = 'hidden';
+            menu.style.transform = 'translateY(-10px)';
+          }
+        }
+      });
+    });
+
+    // Enhanced mobile dropdown functionality
+    const mobileDropdownLinks = document.querySelectorAll('.mobile-dropdown-link');
+    mobileDropdownLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        toggleMobileMenu();
+      });
+    });
+
+    // Keyboard navigation support
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        if (mobileSidebar.classList.contains('active')) {
+          toggleMobileMenu();
+        }
+      }
+    });
+
+    // Performance optimization: Throttle scroll events
+    let ticking = false;
+    function requestTick() {
+      if (!ticking) {
+        requestAnimationFrame(updateNavbar);
+        ticking = true;
+      }
+    }
+
+    function updateNavbar() {
+      setActiveLink();
+      // Scroll to top button
+      const scrollToTopBtn = document.getElementById('scroll-to-top');
+      if (window.scrollY > 300) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', requestTick);
+
+    // Add loading animation
+    window.addEventListener('load', function() {
+      document.body.classList.add('loaded');
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe sections for animation
+    document.querySelectorAll('section').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(30px)';
+      section.style.transition = 'all 0.6s ease';
+      observer.observe(section);
+    });
+
+    // Hosting plans filter functionality
+    const hostingTabs = document.querySelectorAll('.plans-type-tab');
+    const hostingPlans = document.querySelectorAll('.plan-card');
+
+    hostingTabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        hostingTabs.forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        this.classList.add('active');
+
+        const filterType = this.getAttribute('data-type');
+
+        // Filter plans
+        hostingPlans.forEach(plan => {
+          if (filterType === 'all' || plan.getAttribute('data-type') === filterType) {
+            plan.style.display = 'block';
+            plan.style.opacity = '0';
+            plan.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+              plan.style.opacity = '1';
+              plan.style.transform = 'translateY(0)';
+            }, 100);
+          } else {
+            plan.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Domain search functionality
+    function searchDomain() {
+      const domainInput = document.getElementById('domain-input');
+      const domain = domainInput.value.trim();
+      
+      if (domain) {
+        // Simulate domain search
+        alert(`Đang tìm kiếm tên miền: ${domain}`);
+        // Here you would typically make an API call to check domain availability
+      } else {
+        alert('Vui lòng nhập tên miền bạn muốn tìm kiếm');
+      }
+    }
+
+    // Domain search on Enter key
+    document.getElementById('domain-input').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        searchDomain();
+      }
+    });
+
+    // Contact form submission
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData);
+      
+      // Simulate form submission
+      const submitBtn = this.querySelector('.submit-btn');
+      const originalText = submitBtn.innerHTML;
+      
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang gửi...';
+      submitBtn.disabled = true;
+      
+      setTimeout(() => {
+        alert('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi trong thời gian sớm nhất.');
+        this.reset();
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      }, 2000);
+    });
+
+    // Scroll to top functionality
+    document.getElementById('scroll-to-top').addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Add smooth hover effects for cards
+    const cards = document.querySelectorAll('.plan-card, .service-card, .feature-card, .support-card, .domain-card');
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+      });
+    });
+
+    // Initialize all animations on page load
+    window.addEventListener('load', function() {
+      // Trigger initial active link check
+      setActiveLink();
+      
+      // Add fade-in effect for hero section
+      const hero = document.querySelector('.hero');
+      hero.style.opacity = '0';
+      hero.style.transform = 'translateY(30px)';
+      setTimeout(() => {
+        hero.style.transition = 'all 1s ease';
+        hero.style.opacity = '1';
+        hero.style.transform = 'translateY(0)';
+      }, 100);
+    });
+
+    // Add loading state for buttons
+    document.querySelectorAll('button, .btn, .plan-button, .domain-btn, .service-btn, .support-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        if (!this.classList.contains('no-loading')) {
+          this.classList.add('loading');
+          setTimeout(() => {
+            this.classList.remove('loading');
+          }, 1000);
+        }
+      });
+    });
+
+    // Enhanced error handling
+    window.addEventListener('error', function(e) {
+      console.error('JavaScript error:', e.error);
+    });
+
+    // Add responsive image loading
+    const images = document.querySelectorAll('img');
+    const imageObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+            img.classList.remove('lazy');
+            imageObserver.unobserve(img);
+          }
+        }
+      });
+    });
+
+    images.forEach(img => {
+      if (img.dataset.src) {
+        imageObserver.observe(img);
+      }
+    });
+        // Thêm functionality cho support buttons
+    document.querySelectorAll('.support-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const cardTitle = this.closest('.support-card').querySelector('h3').textContent;
+        
+        switch(cardTitle) {
+          case 'Support Ticket':
+            window.open('#ticket-system', '_blank');
+            break;
+          case 'Hotline':
+            if (navigator.userAgent.match(/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i)) {
+              window.location.href = 'tel:+841234567890';
+            } else {
+              alert('Hotline: +84 123 456 789\nHoạt động 24/7');
+            }
+            break;
+          case 'Live Chat':
+            // Tích hợp live chat widget
+            alert('Đang kết nối live chat...');
+            break;
+          case 'Knowledge Base':
+            window.open('#knowledge-base', '_blank');
+            break;
+        }
+      });
+    });
+
+    // Enhanced form validation
+    function validateForm(form) {
+      const requiredFields = form.querySelectorAll('[required]');
+      let isValid = true;
+      
+      requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+          field.style.borderColor = '#ff4757';
+          isValid = false;
+        } else {
+          field.style.borderColor = '';
+        }
+      });
+      
+      return isValid;
+    }
+
+    // Email validation
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+
+    // Phone validation for Vietnam
+    function validatePhoneVN(phone) {
+      const re = /^(0|\+84)(3|5|7|8|9)\d{8}$/;
+      return re.test(phone.replace(/\s/g, ''));
+    }
+
+    // Enhanced contact form with better validation
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      if (!validateForm(this)) {
+        alert('Vui lòng điền đầy đủ thông tin bắt buộc');
+        return;
+      }
+      
+      const email = document.getElementById('email').value;
+      if (!validateEmail(email)) {
+        alert('Email không hợp lệ');
+        document.getElementById('email').style.borderColor = '#ff4757';
+        return;
+      }
+      
+      const phone = document.getElementById('phone').value;
+      if (phone && !validatePhoneVN(phone)) {
+        alert('Số điện thoại không hợp lệ');
+        document.getElementById('phone').style.borderColor = '#ff4757';
+        return;
+      }
+      
+      // Submit form
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData);
+      
+      const submitBtn = this.querySelector('.submit-btn');
+      const originalText = submitBtn.innerHTML;
+      
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang gửi...';
+      submitBtn.disabled = true;
+      
+      // Simulate API call
+      setTimeout(() => {
+        alert('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi trong 24h.');
+        this.reset();
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      }, 2000);
+    });
+
+    // Add copy functionality for contact info
+    document.querySelectorAll('.contact-item').forEach(item => {
+      item.addEventListener('click', function() {
+        const text = this.querySelector('p').textContent;
+        navigator.clipboard.writeText(text).then(() => {
+          const notification = document.createElement('div');
+          notification.textContent = 'Đã copy: ' + text;
+          notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            z-index: 9999;
+            animation: slideIn 0.3s ease;
+          `;
+          document.body.appendChild(notification);
+          setTimeout(() => notification.remove(), 2000);
+        });
+      });
+    });
+
+    // Optimize performance with debounced scroll
+    function debounce(func, wait) {
+      let timeout;
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+      };
+    }
+
+    const debouncedScroll = debounce(() => {
+      setActiveLink();
+      const scrollToTopBtn = document.getElementById('scroll-to-top');
+      if (window.scrollY > 300) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+    }, 10);
+
+    window.addEventListener('scroll', debouncedScroll);
+
+    // Service worker for caching (progressive web app)
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => console.log('SW registered'))
+          .catch(registrationError => console.log('SW registration failed'));
+      });
+    }
+
+    // Initialize tooltips for better UX
+    const tooltipElements = document.querySelectorAll('[data-tooltip]');
+    tooltipElements.forEach(element => {
+      element.addEventListener('mouseenter', function() {
+        const tooltip = document.createElement('div');
+        tooltip.textContent = this.getAttribute('data-tooltip');
+        tooltip.className = 'tooltip';
+        tooltip.style.cssText = `
+          position: absolute;
+          background: rgba(0,0,0,0.8);
+          color: white;
+          padding: 8px 12px;
+          border-radius: 4px;
+          font-size: 14px;
+          z-index: 1000;
+          pointer-events: none;
+        `;
+        document.body.appendChild(tooltip);
+        
+        const rect = this.getBoundingClientRect();
+        tooltip.style.left = rect.left + 'px';
+        tooltip.style.top = (rect.top - tooltip.offsetHeight - 10) + 'px';
+        
+        this._tooltip = tooltip;
+      });
+      
+      element.addEventListener('mouseleave', function() {
+        if (this._tooltip) {
+          this._tooltip.remove();
+          this._tooltip = null;
+        }
+      });
+    });
+
+    console.log('🚀 INTERCLOUDNET.ASIA loaded successfully!');
+  </script>
+</body>
+</html>
