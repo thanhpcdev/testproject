@@ -26,17 +26,17 @@
       --shadow: 0 8px 40px rgba(0,0,0,0.15);
       --shadow-lg: 0 12px 50px rgba(0,0,0,0.25);
 
-      /* Enhanced gradients */
-      --gradient1: linear-gradient(135deg, #00e6b8 0%, #3d61ff 50%, #b86cff 100%);
-      --gradient2: linear-gradient(135deg, #ff6b9d 0%, #c44569 50%, #f8b500 100%);
-      --gradient3: linear-gradient(135deg, #4facfe 0%, #00f2fe 50%, #43e97b 100%);
-      --gradient4: linear-gradient(135deg, #fa709a 0%, #fee140 50%, #96fbc4 100%);
-      --gradient5: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-      --gradient6: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ff8a80 100%);
-      --gradient7: linear-gradient(135deg, #a8edea 0%, #fed6e3 50%, #d299c2 100%);
-      --gradient8: linear-gradient(135deg, #fbd3e9 0%, #bb377d 50%, #4776e6 100%);
-      --gradient9: linear-gradient(135deg, #8ec5fc 0%, #e0c3fc 50%, #ffeaa7 100%);
-      --gradient10: linear-gradient(135deg, #96fbc4 0%, #f9f586 50%, #ff8a80 100%);
+      /* Enhanced gradients - More subtle and accessible */
+      --gradient1: linear-gradient(135deg, #00b894 0%, #2d3561 50%, #8b5a9f 100%);
+      --gradient2: linear-gradient(135deg, #e55a79 0%, #a0344a 50%, #d4941e 100%);
+      --gradient3: linear-gradient(135deg, #3498db 0%, #00a085 50%, #27ae60 100%);
+      --gradient4: linear-gradient(135deg, #e17055 0%, #dda00e 50%, #55a3ff 100%);
+      --gradient5: linear-gradient(135deg, #4a69bd 0%, #5a3e85 50%, #c44569 100%);
+      --gradient6: linear-gradient(135deg, #f39c12 0%, #e67e22 50%, #e74c3c 100%);
+      --gradient7: linear-gradient(135deg, #1dd1a1 0%, #feca57 50%, #ff9ff3 100%);
+      --gradient8: linear-gradient(135deg, #feca57 0%, #8e44ad 50%, #3742fa 100%);
+      --gradient9: linear-gradient(135deg, #54a0ff 0%, #5f27cd 50%, #ff9ff3 100%);
+      --gradient10: linear-gradient(135deg, #00d2d3 0%, #ff9f43 50%, #ee5a52 100%);
 
       /* Navbar specific colors */
       --navbar-bg: rgba(30, 37, 50, 0.95);
@@ -1790,18 +1790,21 @@
       transition: all 0.3s ease;
       opacity: 0;
       visibility: hidden;
-      z-index: 1000;
+      z-index: 1002;
       box-shadow: var(--shadow);
+      transform: scale(0.9);
     }
 
     .scroll-to-top.visible {
       opacity: 1;
       visibility: visible;
+      transform: scale(1);
     }
 
     .scroll-to-top:hover {
       background: var(--gradient3);
-      transform: translateY(-3px);
+      transform: translateY(-3px) scale(1.1);
+      box-shadow: var(--shadow-lg);
     }
 
     /* RESPONSIVE DESIGN */
@@ -1911,6 +1914,31 @@
         flex-direction: column;
         text-align: center;
       }
+
+      /* Mobile scroll button optimizations */
+      .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 48px;
+        height: 48px;
+        font-size: 1.1rem;
+        z-index: 1002;
+        /* Ensure button is touch-friendly and doesn't interfere */
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        /* Prevent dragging issues */
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        will-change: transform, opacity;
+      }
+
+      .scroll-to-top:active {
+        transform: scale(0.95);
+      }
     }
 
     @media (max-width: 480px) {
@@ -1936,6 +1964,15 @@
 
       .stat-number {
         font-size: 2rem;
+      }
+
+      /* Extra small screen scroll button */
+      .scroll-to-top {
+        bottom: 16px;
+        right: 16px;
+        width: 44px;
+        height: 44px;
+        font-size: 1rem;
       }
     }
 
