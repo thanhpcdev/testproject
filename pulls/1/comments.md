@@ -1,0 +1,1 @@
+Please update the gradient colors to make them more diverse and varied, as the current gradients are too repetitive and boring. We would like to see more colorful and diverse gradient variations throughout the UI elements.
